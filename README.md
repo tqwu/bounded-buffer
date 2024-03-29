@@ -4,10 +4,11 @@ Implementation of a thread-safe queue with FIFO properties, and stores and retur
 ## Design Choices
 - Circular queue, where the underlying data structure is an array
 - Semaphores to manage the queue as a shared resource
-- Mutexes to ensure mutual exclusion to help protect the code's critical regions (e.g. pushing and popping)
-These design choices allow for simple checks of the queue's status:
-* If the queue is full, the program can halt enqueuing elements until there is space in the queue
-* If the queue is empty, the program can halt dequeuing elements until there exists an element in the queue
+- Mutexes to ensure mutual exclusion to help protect the code's critical regions (e.g. pushing and popping)\
+
+**These design choices allow for simple checks of the queue's status:**
+- If the queue is full, the program can halt enqueuing elements until there is space in the queue
+- If the queue is empty, the program can halt dequeuing elements until there exists an element in the queue
 
 ### Circular Queue Struct
 The circular queue struct is defined as follows:
